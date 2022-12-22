@@ -33,7 +33,7 @@ then
     # using sed to remove whitespace
     echo -e "The element with atomic number $ATOMIC_NUMBER is $NAME ($SYMBOL). It's a $TYPE, with a mass of $ATOMIC_MASS amu. $NAME has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius." | sed -r 's/\s+/ /g'
   done
-#if argument is provided and is a word
+#if argument is provided and is a name
 elif [[ $1 =~ ^[A-Z][a-z]*$ ]]
 then
   NAME=$($PSQL "SELECT * FROM elements WHERE name='$1'")
